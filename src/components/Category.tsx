@@ -30,7 +30,7 @@ export const Category = ({ category }: CategoryProps) => {
     }
 
     return (
-        <div className="w-48 h-28 border rounded flex flex-col justify-center items-center bg-blue-100 text-6xl text-blue-500 cursor-pointer">
+        <div className="w-48 h-28 mt-5 border rounded flex flex-col justify-center items-center bg-blue-100 text-6xl text-blue-500 cursor-pointer">
             { iconCategory[ getRandomInt(4) ]}
             <span className="text-base">{ category?.name }</span>
         </div>

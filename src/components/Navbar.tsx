@@ -30,6 +30,9 @@ export const Navbar = () => {
                         <NavLink to="/products" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }>Productos</NavLink>
                     </OptionsMenu>
                     <OptionsMenu>
+                        <NavLink to="/categories" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }>Categorias</NavLink>
+                    </OptionsMenu>
+                    <OptionsMenu>
                         <NavLink to="/user" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }>Mi cuenta</NavLink>
                     </OptionsMenu>
                     <OptionsMenu>
