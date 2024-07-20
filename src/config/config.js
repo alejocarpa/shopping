@@ -1,0 +1,1 @@
+export const urlEndpoints = 'https://proyectoeasy.net';

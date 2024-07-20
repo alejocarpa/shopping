@@ -1,8 +1,9 @@
 import axios from "axios";
+import { urlEndpoints } from "../../config/config";
 
 export const getAllCategories = async() => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/categories`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/categories`;
 
     try{
         const { data } = await axios.get(url);
@@ -19,7 +20,7 @@ export const getAllCategories = async() => {
 
 export const getCategory = async( id ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/categories/${ id }`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/categories/${ id }`;
 
     try{
         const { data } = await axios.get(url);
@@ -36,7 +37,7 @@ export const getCategory = async( id ) => {
 
 export const getAllProducts = async() => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/products/`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/products/`;
 
     try{
         const { data } = await axios.get(url);
@@ -53,7 +54,7 @@ export const getAllProducts = async() => {
 
 export const getProduct = async( id ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/products/${ id }`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/products/${ id }`;
 
     try{
         const { data } = await axios.get(url);
@@ -70,7 +71,7 @@ export const getProduct = async( id ) => {
 
 export const savingNewProduct = async( product ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/products/`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/products/`;
 
     const formTypes = {
         name_product: product.name,
@@ -98,7 +99,7 @@ export const savingNewProduct = async( product ) => {
 
 export const updatingProduct = async( product, idProduct ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/products/${ idProduct }`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/products/${ idProduct }`;
     
     const formTypes = {
         name_product: product.name,
@@ -126,7 +127,7 @@ export const updatingProduct = async( product, idProduct ) => {
 
 export const deleteProduct = async( idProduct ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/products/${ idProduct }`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/products/${ idProduct }`;
     
     try{
         const { data } = await axios.delete(url);
@@ -147,7 +148,7 @@ export const deleteProduct = async( idProduct ) => {
 
 export const savingNewCategory = async( category ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/categories/`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/categories/`;
 
     const formTypes = {
         name_category: category.name,
@@ -172,7 +173,7 @@ export const savingNewCategory = async( category ) => {
 
 export const updatingCategory = async( category, idCategory ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/categories/${ idCategory }`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/categories/${ idCategory }`;
     
     const formTypes = {
         name_category: category.name,
@@ -197,7 +198,7 @@ export const updatingCategory = async( category, idCategory ) => {
 
 export const deleteCategory = async( idCategory ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/categories/${ idCategory }`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/categories/${ idCategory }`;
     
     try{
         const { data } = await axios.delete(url);
@@ -218,7 +219,7 @@ export const deleteCategory = async( idCategory ) => {
 
 export const savingNewCompra = async( totalCart, totalCredit ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/cart/checkout`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/cart/checkout`;
 
     const formTypes = {
         total_cart: totalCart,
@@ -248,7 +249,7 @@ export const savingNewCompra = async( totalCart, totalCredit ) => {
 
 export const savingUsersCSV = async( archivo ) =>  {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/users/upload/`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/users/upload/`;
 
     const formData = new FormData();
     formData.append('file', archivo[0]);
@@ -269,7 +270,7 @@ export const savingUsersCSV = async( archivo ) =>  {
 
 export const savingNewUser = async( user ) => {
 
-    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/users/`;
+    const url = `${ urlEndpoints }/prueba_tecnica_helpeople/api/users/`;
 
     const formTypes = {
         username_user: user.name,
