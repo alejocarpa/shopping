@@ -18,7 +18,7 @@ export const ProductShop = () => {
                     <span className="text-4xl">Iphone 15 pro</span>
                     <span className="mt-5 text-neutral-800">Celular iphone 15 pro de apple</span>
                     <span className="mt-5 text-neutral-800">$1000</span>
-                    <ProductButtons />
+                    
                 </div>
             </div>
         </div>
