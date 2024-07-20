@@ -1,4 +1,5 @@
 import { CategoriesSection } from "../components/CategoriesSection"
+import { Footer } from "../components/Footer"
 import { ProductShop } from "../components/ProductShop"
 import { ProductsSection } from "../components/ProductsSection"
 import { ShoppingLayout } from "../layout/ShoppingLayout"
@@ -11,6 +12,7 @@ export const HomePage = () => {
                 <CategoriesSection />
                 <ProductsSection />
             </div>
+            <Footer />
         </ShoppingLayout>
     )
 }

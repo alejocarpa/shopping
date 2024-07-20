@@ -254,7 +254,7 @@ export const savingUsersCSV = async( archivo ) =>  {
     formData.append('file', archivo[0]);
 
     const { data } = await axios.post(url, formData);
-    console.log(data)
+    
     if(data.status === 200){
         return {
             ok: true,
@@ -264,5 +264,32 @@ export const savingUsersCSV = async( archivo ) =>  {
         return {
             ok: false
         }
+    }
+}
+
+export const savingNewUser = async( user ) => {
+
+    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/users/`;
+
+    const formTypes = {
+        username_user: user.name,
+        email_user: user.email,
+        password_user: user.password
+    }
+
+    try{
+        const { data } = await axios.post(url, formTypes);
+        
+        if(data.status === 200){
+            return {
+                ok: true
+            }
+        }else{
+            return {
+                ok: false
+            }
+        }
+    }catch(error){
+        return [];
     }
 }

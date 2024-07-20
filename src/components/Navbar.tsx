@@ -33,7 +33,7 @@ export const Navbar = () => {
                         <NavLink to="/categories" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }>Categorias</NavLink>
                     </OptionsMenu>
                     <OptionsMenu>
-                        <NavLink to="/user" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }>Mi cuenta</NavLink>
+                        <NavLink to="/user" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }>Usuarios</NavLink>
                     </OptionsMenu>
                     <OptionsMenu>
                         <NavLink to="/uploadUsers" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }>Cargar usuarios</NavLink>
