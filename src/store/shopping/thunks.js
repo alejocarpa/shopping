@@ -215,3 +215,54 @@ export const deleteCategory = async( idCategory ) => {
         return [];
     }
 }
+
+export const savingNewCompra = async( totalCart, totalCredit ) => {
+
+    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/cart/checkout`;
+
+    const formTypes = {
+        total_cart: totalCart,
+        total_credit: totalCredit,
+    }
+
+    try{
+        const { data } = await axios.post(url, formTypes);
+        
+        if(data.status === 200){
+            return {
+                ok: data.results.ok,
+                message: data.results.message,
+                newCredit: data.results.newCredit
+            }
+        }else{
+            return {
+                ok: false,
+                message: "Error",
+                newCredit: totalCredit
+            }
+        }
+    }catch(error){
+        return [];
+    }
+}
+
+export const savingUsersCSV = async( archivo ) =>  {
+
+    const url = `https://proyectoeasy.net/prueba_tecnica_helpeople/api/users/upload/`;
+
+    const formData = new FormData();
+    formData.append('file', archivo[0]);
+
+    const { data } = await axios.post(url, formData);
+    console.log(data)
+    if(data.status === 200){
+        return {
+            ok: true,
+            message: data.results.message
+        }
+    }else{
+        return {
+            ok: false
+        }
+    }
+}

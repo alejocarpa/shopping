@@ -1,13 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit'
+import type { RootState } from '../store'
+import { ProductObject } from '../../components/ProductCard';
+
+interface ShoppingState {
+    initialCredit: number;
+    productsInCart: ProductObject[];
+  }
+  
+// Define the initial state using that type
+const initialState: ShoppingState = {
+    initialCredit: 8000,
+    productsInCart: []
+}
+
+interface ProductInCart {
+    productsInCart: ProductObject[];
+}
 
 export const shoppingSlice = createSlice({
     name: 'shopping',
-    initialState: {
-        initialCredit: 8000,
-        productsInCart: []
-    },
+    initialState,
     reducers: {
-        updateCart: ( state, action ) => {
+        updateCart: ( state, action: PayloadAction<any> ) => {
 
             if( state.productsInCart.findIndex( product => product.id == action.payload.product.id) === -1 ){
 
@@ -22,7 +37,14 @@ export const shoppingSlice = createSlice({
             }
             
         },
-        
+        updateCredit: ( state, action: PayloadAction<any> ) => {
+
+            state.initialCredit = action.payload.newCredit
+        },
+        cleanCart: ( state ) => {
+
+            state.productsInCart = [];
+        },
     }
 });
 
@@ -31,5 +53,10 @@ export const shoppingSlice = createSlice({
 export const 
     { 
         updateCart,
-        
+        updateCredit,
+        cleanCart,
     } = shoppingSlice.actions;
+
+    export const selectCount = (state: RootState) => state.shopping;
+
+    export default shoppingSlice.reducer

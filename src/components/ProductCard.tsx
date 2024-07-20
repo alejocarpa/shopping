@@ -14,6 +14,7 @@ export interface ProductObject {
     created_at: string;
     updated_at: string;
     name_category: string;
+    quantity?: number;
 }
 
 export const ProductCard = ({ product }: ProductCardProps) => {

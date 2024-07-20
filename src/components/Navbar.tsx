@@ -36,12 +36,16 @@ export const Navbar = () => {
                         <NavLink to="/user" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }>Mi cuenta</NavLink>
                     </OptionsMenu>
                     <OptionsMenu>
+                        <NavLink to="/uploadUsers" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }>Cargar usuarios</NavLink>
+                    </OptionsMenu>
+                    <OptionsMenu>
                         <TbBrandCashapp />
                         <a>{ initialCredit }</a>
                     </OptionsMenu>
                     <OptionsMenu>
                         <div className='relative'>
-                            <FaShopify className='text-2xl' />
+                            <NavLink to="/cart" className={ ({ isActive }) => isActive ? 'underline decoration-solid' : '' }><FaShopify className='text-2xl' /></NavLink>
+                            
                             {
                                 productsInCart.length > 0
                                 &&
